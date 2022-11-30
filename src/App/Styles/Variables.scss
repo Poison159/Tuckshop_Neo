@@ -1,0 +1,129 @@
+//General colors
+$offWhite: #f7f7f7;
+$offGrey: #ecefef;
+$veryLightGreyBlue: #ecf0f4;
+$lightGrey: #eeeeee;
+$lightGrey: #dddddd;
+$grey: #cccccc;
+$headingGrey: #949292;
+$skyBlue: #cfe6ee;
+$mediumBlue: #2b6094;
+$darkBlue: #25408f;
+$darkerBlue: #182969;
+$royalBlue: #0c2666;
+$greyDarkBlue: #202c36;
+$grayBlue: #2a3b4a;
+$turquoise: #04c4d1;
+$offBlue: #4f95bb;
+$hoverBlue: #889fb2;
+$lighterBlue: #00bcff;
+$waterBlue: #4dc7e4;
+$green: #109110;
+$lightGreen: #58a058;
+$pink: #ff007a;
+$darkPink: #ff007a;
+$red: #d90000;
+$orange: #e76565;
+$lightOrange: #f6871f;
+$warningOrange: #f8881f;
+$lighterOrange: #f19d4e;
+$silver: #a7b1c2;
+$darkSilver: #7a7a7a;
+$greyBlue: #607d8b;
+$brown: #58595b;
+$darkBrown: #555555;
+$coal: #444444;
+$darkCoal: #333333;
+$lightBlack: #222222;
+$darkBlack: #111111;
+$black: #000000;
+$lightPurple: #9579ac;
+$concrete: #dee2e6;
+
+// App style
+$main-font-size: 15px;
+$main-background: #e4e5e6;
+$text-color: #6e6e6e;
+$form-text-color: #495057;
+$component-header-background: #f0f3f5;
+$component-header-text-color: #5e5e5e;
+$main-color: #61b2b9;
+
+// App layout
+$menu-width: 224px;
+$menu-width-thin: 54px;
+$header-height: 48px;
+$footer-height: 50px;
+$menu-animation-speed: 0.3s;
+
+// override bootstrap 4 variables
+$bs-primary: #597d9b;
+$bs-secondary: #58595b;
+$bs-success: #65a865;
+$bs-danger: #cb5151;
+$bs-warning: #eaca6a;
+$bs-info: #19b7df;
+$bs-light: #ecf0f4;
+$bs-dark: #343a40;
+
+// Theme Colours &  override bootstrap 4 variables
+$theme-colors: (
+  "primary": $bs-primary,
+  "secondary": $bs-secondary,
+  "success": $bs-success,
+  "danger": $bs-danger,
+  "warning": $bs-warning,
+  "info": $bs-info,
+  "light": $bs-light,
+  "dark": $bs-dark,
+);
+
+$alert-bg-level: -9.5;
+$alert-border-level: -8;
+$alert-color-level: 7;
+
+$form-border: #ced4da;
+$form-widget-color: #e9ecef;
+$form-focused-border: #419de5;
+$form-focused-shadow-color: rgba(20, 91, 146, 0.25);
+$form-focused-shadow: 0 0 0 0.2rem $form-focused-shadow-color;
+
+// Validation colours
+$validation-color-error: $bs-danger;
+$validation-color-warning: #d66500;
+$validation-color-info: #117a8b;
+
+$validation-border-error: $validation-color-error;
+$validation-shadow-error-color: rgba(220, 53, 69, 0.25);
+$validation-shadow-error: 0 0 0 0.2rem $validation-shadow-error-color;
+
+$validation-border-warning: $validation-color-warning;
+$validation-shadow-warning-color: rgba(214, 101, 0, 0.25);
+$validation-shadow-warning: 0 0 0 0.2rem $validation-shadow-warning-color;
+
+$validation-border-info: $validation-color-info;
+$validation-shadow-info: 0 0 0 0.2rem rgba(17, 122, 139, 0.25);
+
+// Gradients on buttons
+$enable-gradients: true;
+
+// Shadows on buttons / modals
+$enable-shadows: false;
+
+// Slightly modifies the xl breakpoint by changing the max-width from 1140 to 1160 (to cater for larger padding).
+// Adds an xxl breakpoint for full HD screens.
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1800px,
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1160px,
+  xxl: 1559px,
+);

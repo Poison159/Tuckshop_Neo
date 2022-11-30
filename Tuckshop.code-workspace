@@ -1,0 +1,22 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "singular-neo.modelGeneration": {
+            "singleApi": true,
+            "typePathConfig": "App.Config"
+        },
+        "singular-neo.templating": {
+            "usesCards": true
+        },
+        "search.exclude": {
+            "**/.yarn": true,
+            "**/.pnp.*": true
+        },
+        "typescript.tsdk": ".yarn/sdks/typescript/lib",
+        "typescript.enablePromptUseWorkspaceTsdk": true
+    }
+}

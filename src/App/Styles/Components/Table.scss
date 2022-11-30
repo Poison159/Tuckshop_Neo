@@ -1,0 +1,39 @@
+table.table {
+    width: 100%;
+    margin-bottom: 0px;
+    color: $form-text-color;
+
+    .form-control{
+        border-radius: 1px; 
+    }
+    > thead th {
+        border-bottom: 1px solid $concrete;
+        padding: 7px;
+        vertical-align: middle;
+        background: $component-header-background;
+        font-weight: 500;
+    }
+    > tfoot th {
+        font-weight: 500;
+        padding: 7px;
+    }
+    > tfoot th.editable-column {
+        font-weight: 500;
+        padding: 7px 15px;
+    }
+    .table-bordered thead td, .table-bordered thead th {
+         border-bottom-width: 1px; 
+    }
+
+    td {
+        padding: 6px;
+        vertical-align: middle;
+
+        .btn {
+            min-width: 0;
+        }
+    } 
+    td.editable-column {
+        padding: 5px;
+    }
+}

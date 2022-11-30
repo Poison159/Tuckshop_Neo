@@ -1,0 +1,12 @@
+{
+  "apiBaseUrl": "https://domain.{domain}",
+  "apiPath": "https://domain.{domain}/api",
+  "identityServer": {
+    "client_id": "NeoSample.WebApp",
+    "url": "https://identity.{domain}"
+  },
+  "authorisationServer": {
+    "apiPath": "https://auth.{domain}/api"
+  },
+  "environment": "${Environment}"
+}

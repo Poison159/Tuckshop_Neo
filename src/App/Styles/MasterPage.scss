@@ -1,0 +1,228 @@
+body {
+    color: $text-color;
+    font-size: $main-font-size;
+}
+
+div.container-xl {
+    max-width: 1160px;
+    padding: 0px 15px;
+    margin: 0px -15px;
+}
+
+.app-header-panel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background: #fff;
+    font-size: 14px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.14);
+
+    .page-progress {
+        position: fixed;
+        top: 42px;
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+        height: 6px;
+        z-index: 10;
+    }
+
+    .app-header {
+        display: flex;
+    }
+
+    .app-hamburger-container {
+        display: flex;
+        flex: none;
+        align-self: stretch;
+        margin-right: 15px;
+        padding-left: 10px;
+        width: $header-height;
+        font-size: 24px;
+        align-items: center;
+        justify-content: center;
+        color: #aaaaaa;
+        cursor: pointer;
+
+        &:hover {
+            color: $bs-primary;
+        }
+    }
+
+    .app-breadcrumb {
+        flex: auto;
+        padding: 13px 0px;
+    }
+    .app-user-icon {
+        font-size: 20px;
+        padding: 9px 24px;
+        cursor: pointer;
+        position: relative;
+
+        &:hover .app-user-card {
+            display: inline-block;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .app-user-card {
+            text-align: right;
+            display: inline-block;
+            min-width: 250px;
+            position: absolute;
+            top: $header-height;
+            right: 4px;
+            z-index: 10;
+            font-size: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity ease 0.5s;
+
+            .card-arrow {
+                border-width: 0 10px 10px 10px;
+                border-color: transparent transparent $component-header-background transparent;
+                border-style: solid;
+                position: absolute;
+                top: -8px;
+                right: 19px;
+                z-index: 1;
+            }
+
+            .card-body {
+                background: $component-header-background;
+            }
+
+            a {
+                color: $bs-dark;
+            }
+        }
+    }
+}
+
+div.bread-crumb {
+    display: inline;
+
+    div.bread-crumb-level {
+        display: inline;
+
+        span.bread-crumb-seperator {
+            padding: 0 10px;
+        }
+
+        a,
+        span {
+            display: inline-block;
+        }
+    }
+}
+
+.app-left-panel {
+    position: fixed;
+    width: $menu-width;
+    z-index: 4;
+    height: 100%;
+    padding-top: $header-height;
+    background: $component-header-background;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    margin-top: -1px;
+    transition: width ease-in-out $menu-animation-speed, left ease-in-out $menu-animation-speed;
+}
+
+.app-content-area {
+    overflow: auto;
+}
+
+.app-right-panel {
+    margin-left: $menu-width;
+    padding-top: $header-height;
+    background: $main-background;
+    transition: margin-left ease-in-out $menu-animation-speed;
+}
+
+.app-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 15px;
+    height: $footer-height;
+    text-align: center;
+    margin-top: 15px;
+    background: $component-header-background;
+}
+
+.thin-sidebar {
+    .app-left-panel {
+        width: $menu-width-thin;
+    }
+    .app-right-panel {
+        margin-left: $menu-width-thin;
+    }
+}
+
+.sidebar-expanded {
+    .app-header-panel {
+        position: fixed;
+    }
+    .app-left-panel {
+        width: $menu-width;
+    }
+}
+
+@media (min-width: 1361px) {
+    // Huge screens
+
+    .constrain-width {
+        max-width: (1920px - $menu-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .container {
+        margin-left: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    div.container-xl {
+        max-width: 1160px;
+        padding: 0px 20px;
+        margin: 0px -20px;
+    }
+
+    div.loader-container.page-loader {
+        > div.loader-overlay {
+            left: $menu-width;
+        }
+    }
+}
+@media (max-width: 1360.98px) {
+    // Smaller than 1360px - menu will be hidden
+
+    .container {
+        margin-left: auto;
+    }
+}
+@include media-breakpoint-down(xxl) {
+    div.container-xl {
+        padding: 0;
+        margin: 0;
+    }
+}
+@include media-breakpoint-down(sm) {
+    .thin-sidebar {
+        .app-left-panel {
+            width: $menu-width;
+            left: -($menu-width + 3);
+            overflow: auto;
+        }
+        .app-right-panel {
+            margin-left: 0;
+        }
+    }
+    .sidebar-expanded {
+        .app-left-panel {
+            left: 0;
+        }
+    }
+}
+@include media-breakpoint-down(xs) {
+}

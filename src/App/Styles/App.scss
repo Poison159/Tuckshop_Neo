@@ -1,0 +1,17 @@
+//Main scss
+@import "./Variables.scss";
+@import '~bootstrap/scss/bootstrap.scss';
+
+// Neo component styles
+@import "~@singularsystems/neo-react/styles/Neo.scss";
+
+// Component scss
+@import "./Components/Misc.scss";
+@import "./Components/Sidebar.scss";
+@import "./Components/Table.scss";
+
+//Views
+@import "./MasterPage.scss";
+
+// Include this if you want cards to collapse on mobile screen sizes to save space.
+// @import "./Components/MobileSpaceSaver.scss";

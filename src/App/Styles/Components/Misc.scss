@@ -1,0 +1,222 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+
+// Input override
+.form-control {
+    border-radius: 1px;
+    font-size: $main-font-size;
+}
+
+.input-group-text {
+    font-size: $main-font-size;
+}
+
+.btn-link-inline {
+    padding: 0;
+    vertical-align: inherit;
+}
+.btn.form-btn, .button-input-align {
+    margin-top: 29px;
+    width: 100%;
+}
+
+.btn {
+    border-radius: 2px;
+    min-width: 100px;
+    font-size: $main-font-size;
+
+    &.btn-sm {
+        min-width: 0;
+    }
+}
+.btn-group {
+    .btn {
+        min-width: 0;
+    }
+}
+
+// Alerts and toasts
+div.toast-container {
+    position: fixed;
+    right: 0px;
+    top: $header-height;
+    padding: 10px;
+    backdrop-filter: blur(3px);
+    border-radius: 5px;
+}
+
+@each $color, $value in $theme-colors {
+    .toast-header-#{$color} {
+        @include alert-variant(
+            theme-color-level($color, $alert-bg-level),
+            theme-color-level($color, $alert-border-level),
+            theme-color-level($color, $alert-color-level)
+        );
+    }
+    .toast-count-down-#{$color} {
+        background-color: theme-color-level($color, -3);
+    }
+}
+
+.alert-warning {
+    @include alert-variant(
+        theme-color-level("warning", -9),
+        theme-color-level("warning", -6),
+        theme-color-level("warning", 7)
+    );
+}
+.alert-dark {
+    @include alert-variant(theme-color-level("dark", -3), theme-color-level("dark", -1), $bs-light);
+}
+.toast-header-warning {
+    @include alert-variant(
+        theme-color-level("warning", -7),
+        theme-color-level("warning", -4),
+        theme-color-level("warning", $alert-color-level)
+    );
+}
+.toast-header-dark {
+    @include alert-variant(
+        theme-color-level("dark", -8),
+        theme-color-level("dark", -4),
+        theme-color-level("dark", $alert-color-level)
+    );
+}
+div.toast-container:empty {
+    visibility: hidden;
+}
+
+/* Card overrides */
+.neo-card.card {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 0px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px 0 transparent, 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+    .card-header {
+        background: $component-header-background;
+        padding: 10px 20px;
+        border-bottom-color: transparent;
+        margin-bottom: 0;
+        color: $component-header-text-color;
+        font-weight: 500;
+
+        > i {
+            margin-right: 10px;
+        }
+    }
+
+    /* Card in a card */
+    .neo-card.card {
+        box-shadow: none;
+        border: 1px solid $concrete;
+    }
+
+    /* Tabs in a card */
+    .neo-tab-container.neo-tab-card-mode {
+        div.tabs-header .nav-tabs .nav-link {
+            margin-left: 0;
+        }
+        div.tab-content {
+            box-shadow: none;
+            border: 1px solid $concrete;
+            border-top: 0;
+        }
+    }
+}
+
+//scroll bar
+
+body::-webkit-scrollbar {
+    width: 9px;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 1px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    background: $bs-primary;
+}
+
+/* Modal overrides */
+
+.modal-content {
+    border: none;
+
+    .modal-header {
+        background: $component-header-background;
+        border: none;
+        padding: 0.8rem 1rem;
+
+        .modal-title {
+            font-size: 1.1rem;
+        }
+    }
+
+    .modal-footer {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+/* Tab overrides */
+
+.neo-tab-container.neo-tab-card-mode {
+    div.tabs-header {
+        margin-bottom: 0px;
+        z-index: 1;
+
+        .nav-tabs {
+            .nav-link {
+                margin-left: -1px;
+                border-radius: 2px;
+                border: none;
+            }
+            .nav-link:hover {
+                background: darken($component-header-background, 4%);
+                border-color: transparent;
+            }
+            .nav-link.active {
+                background: $component-header-background;
+                color: $component-header-text-color;
+                font-weight: 500;
+
+                border-left: 1px solid rgba(0, 0, 0, 0.1);
+                border-right: 1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+    div.tab-content {
+        background: #fff;
+        padding: 1.25rem 1rem;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px 0 transparent, 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+        > .tab-pane {
+            padding: 0;
+        }
+    }
+}
+
+/* Async Select overrides */
+
+.react-select-bs {
+    flex-grow: 1;
+  
+    .react-select-bs__control {
+        border: 1px solid $form-border;
+        border-radius: 1px;
+        min-height: calc(1.5em + .75rem + 2px);
+  
+        &.react-select-bs__control--menu-is-open, &.react-select-bs__control--is-focused {
+            color: #495057;
+            border-color: $input-focus-border-color;
+            outline: 0;
+            box-shadow: $input-focus-box-shadow;
+        }
+    }
+}
